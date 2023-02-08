@@ -27,8 +27,8 @@ body {
 }
 
 
-.list-group>.list-group .list-group-item {
-    padding-left: 4rem;
+.list-group-sub-item {
+    padding-left: 4rem !important;
 }
 
 iframe[src*=youtube] {
