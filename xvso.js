@@ -38,7 +38,7 @@ function checkWinner() {
 
     for (const combination of winningCombinations) {
         const [a, b, c] = combination;
-        if (squareValues[a] === squareValues[b] && squareValues[b] === squareValues[c]) {
+        if (squareValues[a] && squareValues[a] === squareValues[b] && squareValues[b] === squareValues[c]) {
             winner = squareValues[a];
             break;
         }
