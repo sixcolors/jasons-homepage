@@ -64,30 +64,30 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr onclick="toggleAnswer(this)">
               <th scope="row">1</th>
               <td>Why was the math book sad?</td>
-              <td>Because it had too many problems.</td>
+              <td><span class="blur-text">Because it had too many problems.</span></td>
             </tr>
-            <tr>
+            <tr onclick="toggleAnswer(this)">
               <th scope="row">2</th>
               <td>Why did the tomato turn red?</td>
-              <td>Because it saw the salad dressing.</td>
+              <td><span class="blur-text">Because it saw the salad dressing.</span></td>
             </tr>
-            <tr>
+            <tr onclick="toggleAnswer(this)">
               <th scope="row">3</th>
               <td>Why don't scientists trust atoms?</td>
-              <td>Because they make up everything.</td>
+              <td><span class="blur-text">Because they make up everything.</span></td>
             </tr>
-            <tr>
+            <tr onclick="toggleAnswer(this)">
               <th scope="row">4</th>
               <td>Why was the computer cold?</td>
-              <td>Because it left its Windows open.</td>
+              <td><span class="blur-text">Because it left its Windows open.</span></td>
             </tr>
-            <tr>
+            <tr onclick="toggleAnswer(this)">
               <th scope="row">5</th>
               <td>Why did the scarecrow win an award?</td>
-              <td>Because he was outstanding in his field.</td>
+              <td><span class="blur-text">Because he was outstanding in his field.</span></td>
             </tr>
           </tbody>
         </table>
@@ -104,6 +104,20 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="bumblebee.js"></script>
+    <script>
+      function toggleAnswer(jokeElement) {
+        // Find the .blur-text span within the clicked row
+        const answerElement = jokeElement.querySelector('.blur-text');
+        // Get the computed style of the element
+        const computedStyle = window.getComputedStyle(answerElement);
+        // Toggle the blur effect based on the computed style
+        if (computedStyle.filter === "blur(5px)") {
+          answerElement.style.filter = "none";
+        } else {
+          answerElement.style.filter = "blur(5px)";
+        }
+      }
+    </script>
 </body>
 
 </html>
